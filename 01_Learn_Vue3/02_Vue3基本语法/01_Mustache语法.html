@@ -11,7 +11,21 @@
   <div id="app">Hello World</div>
 
   <template id="my-app">
-    <H2>{{message}}</H2>
+    <!-- 值 -->
+    <H2>{{ message }} -- {{ message }}</H2>
+    <!-- JavaScript表达式 -->
+    <H2>{{ counter * 100 }}</H2>
+    <H2>{{ message.split(" "). reverse().join(" ") }}</H2>
+    <!-- 函数 -->
+    <h2>{{ getReverseMessage() }}</h2>
+    <!-- 三元运算符 -->
+    <h2>{{ isShow ? "哈哈" : "" }}</h2>
+    <button @click="toggle">切换</button>
+    <!-- 错误用法 -->
+    <!-- var name = "abc" 是赋值语句 -->
+    <!-- <h2>{{ var name = "abc" }}</h2> -->
+    <!-- 不能用语句 -->
+    <!-- <h2>{{ if(isShow) {return "hahaha" } }}</h2> -->
   </template>
 
   <script src="../js/vue.js"></script>
@@ -21,8 +35,18 @@
       data() {
         return {
           message: "Hello Vue",
+          counter: 10,
+          isShow: true,
         }
       },
+      methods: {
+        getReverseMessage() {
+          return this.message.split(" ").reverse().join("+");
+        },
+        toggle() {
+          this.isShow = !this.isShow;
+        }
+      }
     }
 
     Vue.createApp(App).mount('#app');
