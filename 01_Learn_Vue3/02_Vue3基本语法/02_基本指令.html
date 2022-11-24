@@ -11,22 +11,31 @@
   <div id="app">Hello World</div>
 
   <template id="my-app">
-    <H2>{{message}}</H2>
+    <div>
+      <h2>{{counter}}</h2>
+      <h2 v-once>{{counter}}</h2>
+      <button @click="increment">+</button>
+    </div>
   </template>
-
+  
   <script src="../js/vue.js"></script>
   <script>
     const App = {
       template: "#my-app",
-      data() {
+      data () {
         return {
-          message: "Hello Vue",
+          counter: 100,
         }
       },
+      methods: {
+        increment() {
+          this.counter++;
+        }
+      }
     }
 
-    Vue.createApp(App).mount('#app');
+    Vue.createApp(App).mount("#app");
   </script>
-  
+
 </body>
 </html>
