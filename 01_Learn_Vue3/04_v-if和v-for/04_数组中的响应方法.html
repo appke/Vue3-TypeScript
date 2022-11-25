@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">Hello World</div>
+
+  <template id="my-app">
+    <ul>
+      <li v-for="movie in movies">{{ movie }}</li>
+    </ul>
+    <input type="text" v-model="newMovie"> 
+    <button @click="addMovie">提交</button>
+    <button @click="filterBtn">过滤</button>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const App = {
+      template: "#my-app",
+      data() {
+        return {
+          movies: [
+            "流浪地球",
+            "星际穿越",
+            "《教父》",
+            "夏洛特烦恼",
+          ],
+          newMovie: "",
+        }
+      },
+      methods: {
+        addMovie() {
+          this.movies.push(this.newMovie);
+          this.newMovie = "";
+        },
+        filterBtn() {
+          this.movies = this.movies.filter(item => item.length > 4)
+        }
+      }
+    }
+
+    Vue.createApp(App).mount('#app');
+  </script>
+
+</body>
+
+</html>
