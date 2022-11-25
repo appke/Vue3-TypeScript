@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">Hello World</div>
+
+  <template id="my-app">
+    <!-- <H2 :class="{active: true}">哈哈哈哈</H2> -->
+    <h2 :class="{active: isActive}">哈哈哈哈</h2>
+    <p :class="{active: isActive}">哈哈哈哈</p>
+    <button @click="toggle">切换</button>
+  </template>
+
+  <style>
+    .active {
+      color: red;
+      background-color: green;
+    }
+  </style>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const App = {
+      template: "#my-app",
+      data() {
+        return {
+          isActive: true,
+        }
+      },
+      methods: {
+        toggle() {
+          this.isActive = !this.isActive;
+        }
+      }
+    }
+
+    Vue.createApp(App).mount('#app');
+  </script>
+
+</body>
+
+</html>
