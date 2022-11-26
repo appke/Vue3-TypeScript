@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">Hello World</div>
+
+  <template id="my-app">
+    <h2>{{info.name}}</h2>
+    <button @click="changeInfo">改变info</button>
+    <button @click="changeInfoName">改变info.name</button>
+    <button @click="changeInfoNbaName">改变info.nba.name</button>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const App = {
+      template: "#my-app",
+      data() {
+        return {
+          info: { name: "Kobe", age: 18, nba: {name: "James"} }
+        }
+      },
+      watch: {
+        info: {
+          handler: function(newValue, oldValue) {
+            console.log("新值：", newValue, "旧值", oldValue);
+          },
+          deep: true,
+          immediate: true
+        },
+        // "info.name": function(newValue, oldValue) {
+        //   console.log("新值：", newValue, "旧值", oldValue);
+        // },
+      },
+      methods: {
+        changeInfo() {
+          this.info = {name: "muk-info"};
+        },
+        changeInfoName() {
+          this.info.name = "muk-info.name";
+        },
+        changeInfoNbaName() {
+          this.info.nba.name = "muk-info.nba.name";
+        }
+      }
+    }
+
+    Vue.createApp(App).mount('#app');
+  </script>
+
+</body>
+
+</html>
