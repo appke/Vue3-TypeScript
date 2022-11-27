@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">Hello World</div>
+
+  <template id="my-app">
+    <component-a></component-a>
+    <component-a></component-a>
+    <component-b></component-b>
+    <!-- <ComponentB></ComponentB> -->
+  </template>
+
+  <template id="componentA">
+    <h2>{{title}}</h2>
+    <p>{{desc}}</p>
+    <button @click="btnClick">点击一下</button>
+  </template>
+
+
+  <template id="componentB">
+    <h2>我是组件2</h2>
+    <input type="text" v-model="cpnBMsg">
+    <p>{{cpnBMsg}}</p>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const App = {
+      template: "#my-app",
+    }
+    const app = Vue.createApp(App);
+
+    // 使用app注册一个全局组件
+    app.component("component-a", {
+      template: "#componentA",
+      data() {
+        return {
+          title: "我是标题",
+          desc: "我是内容，哈哈哈哈"
+        }
+      },
+      methods: {
+        btnClick() {
+          console.log("btn ------ ");
+        }
+      }
+    });
+
+    app.component("ComponentB", {
+      template: "#componentB",
+      data() {
+        return {
+          cpnBMsg: "Hello Component"
+        }
+      },
+    });
+    
+    app.mount('#app');
+  </script>
+
+</body>
+
+</html>
