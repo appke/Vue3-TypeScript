@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">Hello World</div>
+
+  <template id="my-app">
+    <H2>修改前：{{info.name}}-{{info.age}}-{{info.nba.name}}</H2>
+    <H2>修改后：{{fixInfo.name}}-{{fixInfo.age}}-{{fixInfo.nba.name}}</H2>
+    <button @click="changeInfo">修改info.name</button>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const App = {
+      template: "#my-app",
+      data() {
+        return {
+          info: { name: "Kobe", age: 18, nba: { name: "Jemes"} },
+          fixInfo: {},
+        }
+      },
+      methods: {
+        changeInfo() {
+          this.info.name = "muk-info.name";
+          this.info.age = 29;
+          this.info.nba.name = "yaoming";
+        }
+      },
+      created() {
+        console.log("created ------")
+        this.fixInfo = Object.assign({}, this.info)
+      }
+    }
+
+    Vue.createApp(App).mount('#app');
+  </script>
+
+</body>
+
+</html>
