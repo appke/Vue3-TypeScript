@@ -19,14 +19,14 @@ module.exports = {
       { 
         test: /\.(png|jpe?g|gif|svg)$/, 
         use: {
-          loader: "file-loader",
+          loader: "url-loader",
           options: {
-            // outputPath: "img",
+            limit: 100 * 1024,
             name: "img/[name]_[hash:6].[ext]",
-            esModule: false, //fileloader5.0以上 路径问题
+            esModule: false,
           }
         },
-        type: "javascript/auto" //url(..)会在build下生成一张错误图片
+        type: "javascript/auto"
       },
     ] 
   }
