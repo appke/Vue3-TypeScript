@@ -16,17 +16,41 @@ module.exports = {
         test: /\.less$/, 
         use: ["style-loader", "css-loader", "less-loader"] 
       },
-      { 
+      // { 
+      //   test: /\.(png|jpe?g|gif|svg)$/, 
+      //   use: {
+      //     loader: "file-loader",
+      //     options: {
+      //       name: "img/[name]_[hash:6].[ext]",
+      //       esModule: false,
+      //     }
+      //   },
+      //   type: "javascript/auto"
+      // },
+      // { 
+      //   test: /\.(png|jpe?g|gif|svg)$/, 
+      //   use: {
+      //     loader: "url-loader",
+      //     options: {
+      //       limit: 100 * 1024,
+      //       name: "img/[name]_[hash:6].[ext]",
+      //       esModule: false,
+      //     }
+      //   },
+      //   type: "javascript/auto"
+      // },
+      {
         test: /\.(png|jpe?g|gif|svg)$/, 
-        use: {
-          loader: "url-loader",
-          options: {
-            limit: 100 * 1024,
-            name: "img/[name]_[hash:6].[ext]",
-            esModule: false,
-          }
+        // type: "asset/resource"
+        type: "asset",
+        generator: {
+          filename: "img/[name]_[hash:6][ext]"
         },
-        type: "javascript/auto"
+        parser: {
+          dataUrlCondition: {
+            maxSize: 100 * 1024
+          }
+        }
       },
     ] 
   }
