@@ -1,6 +1,7 @@
 import "../css/style.css";
 import "../css/title.less";
 import "../css/image.css";
+import "../font/iconfont.css"
 
 const divEl = document.createElement("div");
 divEl.className = "title";
@@ -16,6 +17,12 @@ const imgDivEl = document.createElement("img");
 // imgDivEl.src = "../img/zznh.png"; //仅仅赋值路径字符串
 imgDivEl.src = pngImage;
 
+// 插入字体图标
+const iEl = document.createElement("i");
+iEl.className = "iconfont icon-ashbin";
+
+
 document.body.appendChild(divEl);
 document.body.appendChild(bgDivEl);
 document.body.appendChild(imgDivEl);
+document.body.appendChild(iEl);
