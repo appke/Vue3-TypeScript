@@ -7,6 +7,10 @@ const divEl = document.createElement("div");
 divEl.className = "title";
 divEl.innerHTML = "你好啊,李银河";
 
+// 开发错误信息
+const content = "Hello Vue"
+console.log(content.length);
+
 // 设置背景图片
 const bgDivEl = document.createElement("div");
 bgDivEl.className = "image-bg";
@@ -26,3 +30,4 @@ document.body.appendChild(divEl);
 document.body.appendChild(bgDivEl);
 document.body.appendChild(imgDivEl);
 document.body.appendChild(iEl);
+
