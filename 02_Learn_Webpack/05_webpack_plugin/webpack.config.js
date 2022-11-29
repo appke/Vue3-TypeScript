@@ -1,10 +1,14 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
+const { DefinePlugin } = require("copy-webpack-plugin");
+
 module.exports = {
   entry: "./src/main.js",
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "bundle.js"
+    filename: "js/bundle.js"
   },
   module: { 
     rules: [ 
@@ -39,6 +43,23 @@ module.exports = {
     ] 
   },
   plugins: [
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin(),
+    new DefinePlugin({
+      BASE_URL: './'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "public",
+          globOptions: {
+            ignore: [
+              '**/.DS_Store',
+              '**/index.html'
+            ]
+          }
+        }
+      ]
+    }),
   ]
 }
