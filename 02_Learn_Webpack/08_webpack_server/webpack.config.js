@@ -13,6 +13,12 @@ module.exports = {
     path: path.resolve(__dirname, "build"),
     filename: "js/bundle.js"
   },
+  devServer: {
+    // contentBase: "./public"
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
+  },
   module: { 
     rules: [ 
       { 
@@ -64,19 +70,19 @@ module.exports = {
       __VUE_OPTIONS_API__: true,
       __VUE_PROD_DEVTOOLS__: false
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: "public",
-          globOptions: {
-            ignore: [
-              '**/.DS_Store',
-              '**/index.html'
-            ]
-          }
-        }
-      ]
-    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: "public",
+    //       globOptions: {
+    //         ignore: [
+    //           '**/.DS_Store',
+    //           '**/index.html'
+    //         ]
+    //       }
+    //     }
+    //   ]
+    // }),
     new VueLoaderPlugin(),
   ]
 }
