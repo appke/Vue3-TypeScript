@@ -30,6 +30,7 @@ console.log(message);
 // }).mount("#app")
 
 // 引入vue文件
-import { createApp } from 'vue/dist/vue.esm-bundler';
+// import { createApp } from 'vue/dist/vue.esm-bundler';
+import { createApp } from 'vue';
 import App from "./vue/App.vue"
 createApp(App).mount("#app")
