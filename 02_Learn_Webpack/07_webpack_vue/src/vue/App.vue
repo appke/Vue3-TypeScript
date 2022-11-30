@@ -1,21 +1,20 @@
-<template id="my-app">
-    <h2>我是vue文件创建的{{message}}</h2>
-    <p>{{ message }}</p>
+<template>
+  <h2>我是vue文件创建的{{ message }}</h2>
+  <p>{{ title }}</p>
 </template>
 
 <script>
 export default {
-  template: "#my-app",
-  date() {
+  data() {
     return {
+      title: "哈哈哈哈哈",
       message: "Hello Vue3"
     }
   }
 }
 </script>
 
-
-<style>
+<style scoped>
 p {
   color: red;
 }
