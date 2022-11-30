@@ -1,0 +1,8 @@
+.title {
+  color: red;
+  font-weight: 700;
+  font-size: 30px;
+
+  color: #12345678;
+  user-select: none;
+}
