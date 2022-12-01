@@ -9,7 +9,7 @@ divEl.innerHTML = "你好啊,李银河";
 
 // 开发错误信息
 const content = "Hello Vue"
-console.log(content.length);
+console.log("content长度",content.length);
 
 // 设置背景图片
 const bgDivEl = document.createElement("div");
@@ -31,3 +31,4 @@ document.body.appendChild(bgDivEl);
 document.body.appendChild(imgDivEl);
 document.body.appendChild(iEl);
 
+console.log("element112223344");

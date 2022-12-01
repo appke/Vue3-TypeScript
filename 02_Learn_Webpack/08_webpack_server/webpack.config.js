@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { VueLoaderPlugin } = require("vue-loader/dist/index");
 
 module.exports = {
+  target: "web",
   mode: "development",
   devtool: "source-map",
   entry: "./src/main.js",
@@ -16,8 +17,9 @@ module.exports = {
   devServer: {
     // contentBase: "./public"
     static: {
-      directory: path.join(__dirname, "public"),
+      directory: path.join(__dirname, "public")
     },
+    hot: true,
   },
   module: { 
     rules: [ 

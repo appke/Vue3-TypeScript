@@ -34,3 +34,17 @@ console.log(message);
 import { createApp } from 'vue';
 import App from "./vue/App.vue"
 createApp(App).mount("#app")
+
+// 模块热替换HMR
+if (module.hot) {
+  // 指定哪个模块发生热更新
+  module.hot.accept("./js/element.js", () => {
+    console.log("element更新了");
+  });
+  module.hot.accept("./js/info.js", () => {
+    console.log("info更新了");
+  });
+  module.hot.accept("./js/math.js", () => {
+    console.log("math更新了");
+  });
+}
