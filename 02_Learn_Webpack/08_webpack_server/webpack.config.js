@@ -21,6 +21,13 @@ module.exports = {
     },
     hot: true,
   },
+  resolve: {
+    extensions: [".js", ".json", ".mjs", ".vue", ".ts", ".jsx", ".tsx"],
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+      "js": path.resolve(__dirname, "./src/js")
+    }
+  },
   module: { 
     rules: [ 
       { 
