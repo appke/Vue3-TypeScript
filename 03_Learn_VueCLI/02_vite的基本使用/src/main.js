@@ -15,3 +15,7 @@ const titleEl = document.createElement("div");
 titleEl.className ="title";
 titleEl.innerHTML = "Hello World";
 document.body.appendChild(titleEl);
+
+// 导入ts文件
+import mul from "./ts/mul";
+console.log("mul(20* 30) = ", mul(20, 30));
