@@ -10,7 +10,6 @@
       <template v-slot:right>
         <i>右边i元素</i>
       </template>
-
     </nav-bar>
   </div>
 </template>
