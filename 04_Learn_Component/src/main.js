@@ -4,6 +4,7 @@ import { createApp } from 'vue'
 // import App from "./03_父组件传子/App"
 // import App from "./04_子组件传父/App"
 // import App from "./05_组件通信练习/App"
-import App from "./06_Provide和Inject/App"
+// import App from "./06_Provide和Inject/App"
+import App from "./07_事件总线的使用/App";
 
 createApp(App).mount('#app')
