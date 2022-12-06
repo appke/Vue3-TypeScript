@@ -1,0 +1,22 @@
+<template>
+  <div>
+    <home></home>
+  </div>
+</template>
+
+<script>
+import Home from "./Home.vue";
+  export default {
+    components: {
+      Home,
+    },
+    provide: {
+      name: "muk",
+      age: "31",
+    }
+  }
+</script>
+
+<style scoped>
+
+</style>
