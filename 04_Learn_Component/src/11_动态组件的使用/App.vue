@@ -17,7 +17,11 @@
     </template> -->
 
     <!-- 动态组件 -->
-    <component :is="currentTab"></component>
+    <component :is="currentTab"
+              name="muk"
+              :age="18"
+              @pageClick="pageClick">
+    </component>
 
   </div>
 </template>
@@ -41,8 +45,10 @@ export default {
   },
   methods: {
     btnClick(item) {
-      console.log("btnClick---", item);
       this.currentTab = item;
+    },
+    pageClick() {
+      console.log("page内部发生点击 ---");
     }
   }
 }
