@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>异步组件AsyncCategory组件</h4>
+    组件还未加载下来，先显示它
   </div>
 </template>
 
