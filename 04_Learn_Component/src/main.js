@@ -18,6 +18,7 @@ import { createApp } from 'vue'
 //   console.log('sum(10, 20) :>> ', sum(10, 20));
 // })
 
-import App from "./13_引用元素和组件/App"
+// import App from "./13_引用元素和组件/App"
+import App from "./14_生命周期函数/App"
 
 createApp(App).mount('#app')
