@@ -3,14 +3,19 @@
     <mk-input v-model="message"></mk-input>
     <!-- <mk-input v-bind:modelValue="message" @update:modelValue="message = $envent"></mk-input> -->
     <h2>App的message: {{message}}</h2>
+
+    <mk-input2 v-model="message"></mk-input2>
+    <h2>App的message: {{message}}</h2>
   </div>
 </template>
 
 <script>
 import MkInput from "./MkInput.vue";
+import MkInput2 from "./MkInput2.vue";
   export default {
     components: {
       MkInput,
+      MkInput2
     },
     data() {
       return {
