@@ -12,7 +12,13 @@
       return {
         counter: 0,
       }
-    }
+    },
+    created() {
+      console.log("Category组件 ----- created");
+    },
+    unmounted() {
+      console.log("Category组件 ----- unmounted");
+    },
   }
 </script>
 

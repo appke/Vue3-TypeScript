@@ -12,7 +12,19 @@
       return {
         counter: 0,
       }
-    }
+    },
+    created() {
+      console.log("About组件 ----- created");
+    },
+    unmounted() {
+      console.log("About组件 ----- unmounted");
+    },
+    activated() {
+      console.log("About组件 ----- activated");
+    },
+    deactivated() {
+      console.log("About组件 ----- deactivated");
+    },
   }
 </script>
 
