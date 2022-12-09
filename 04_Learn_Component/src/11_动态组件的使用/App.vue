@@ -17,11 +17,14 @@
     </template> -->
 
     <!-- 动态组件 -->
-    <component :is="currentTab"
+    <keep-alive include="home,about">
+      <component :is="currentTab"
               name="muk"
               :age="18"
               @pageClick="pageClick">
-    </component>
+      </component>
+    </keep-alive>
+    
 
   </div>
 </template>
